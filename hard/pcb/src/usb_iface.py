@@ -45,8 +45,8 @@ def usb_iface():
     usb_conn_dn = Net("USB_CONN_DN")
     usb_conn["A6"] += usb_conn_dp
     usb_conn["A7"] += usb_conn_dn
-    usb_conn["D+"] & usb_conn_dp & esd_prot[3,4] & serial_res[0] & usb["usb_n"]
-    usb_conn["D-"] & usb_conn_dn & esd_prot[1,6] & serial_res[1] & usb["usb_p"]
+    usb_conn["D+"] & usb_conn_dp & esd_prot[3,4] & serial_res[0] & usb["usb_p"]
+    usb_conn["D-"] & usb_conn_dn & esd_prot[1,6] & serial_res[1] & usb["usb_n"]
     esd_prot[5] & vbus & ferrite[1,2] & power["v5v"]
     bypass_cap(vbus, power["gnd"], "100nF")
     esd_prot[2] += power["gnd"]
