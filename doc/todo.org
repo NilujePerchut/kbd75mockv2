@@ -2,5 +2,9 @@
 
 * PCB
 ** Key modules modifications [0/2]
-- [ ] Invert Space keys stabs holes (large up, small down)
-- [ ]
+- [ ] Invert Space keys stabs holes (large up, small down). To be validated (KBD75V2 compatibility only)
+- [-] Add mechanics
+  - [ ] Screw holes
+  - [X] JLCPCB fiducials
+  - [X] JLCPCB tooling holes
+  - [X] SAKURA
