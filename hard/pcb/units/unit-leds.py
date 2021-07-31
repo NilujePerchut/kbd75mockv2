@@ -4,7 +4,7 @@
 from skidl import Net, POWER
 from sch_utils import unit_map_on_he10, run_unit
 
-from src.leds import leds
+from src.leds import per_key_leds, backlight_leds
 
 
 class FakeKey():
@@ -18,13 +18,15 @@ def unit_leds():
     power = {"v5v": Net("V5V"), "gnd": Net("GND")}
     power["v5v"].drive = POWER
     power["gnd"].drive = POWER
-    command = Net("COMMAND")
-    in_signals = list({**power}.values()) + [command]
+    commands = {"per_key": Net("COMMAND_PER_KEY"),
+                "backlight": Net("COMMAND_BACKLIGHT")}
+    in_signals = list({**power, **commands}.values())
     unit_map_on_he10(in_signals)
 
     iterator = [FakeKey(F"LED_{i}") for i in range(10)]
 
-    leds(power, command, iterator)
+    per_key_leds(power, commands["per_key"], iterator)
+    backlight_leds(power, commands["backlight"], 10)
 
 
 if __name__ == "__main__":

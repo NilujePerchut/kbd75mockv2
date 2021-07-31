@@ -7,7 +7,7 @@ from sch_utils import dop_part, bypass_cap, get_res, pull_updown
 from sch_utils import get_capa
 
 
-def leds(power, command, keys_by_led_iterator):
+def per_key_leds(power, command, keys_by_led_iterator):
     """The LED chain"""
 
     # Command is in 3.3V, use a level shifter
@@ -39,3 +39,15 @@ def leds(power, command, keys_by_led_iterator):
     inst_led["DOUT"].disconnect()
     inst_led["DOUT"] += NC
     default_circuit.rmv_nets(current_command)
+
+
+def backlight_leds(power, command, chain_length, designator="BKL"):
+    """Creates a backlight chain using SK6812-MINI-E leds"""
+    class BackLightKey(object):
+        def __init__(self, name):
+            self.label = name
+
+    bkls = [BackLightKey(F"{designator}{i}")
+            for i in range(chain_length)]
+    per_key_leds(power, command, bkls)
+

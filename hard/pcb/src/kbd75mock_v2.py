@@ -10,12 +10,12 @@ from src.usb_iface import usb_iface
 from src.regulator import regulator
 from src.stm32 import stm32
 from src.key_matrix import key_matrix
-from src.leds import leds
+from src.leds import per_key_leds, backlight_leds
 from src.kle_parser import KeebLayout
 
 
 KLE_JSON_FILE = "../rcs/v2.json"
-BACKLIGHT_LEDS_WIDTH = 16
+BACKLIGHT_LEDS_LENGTH = 16
 
 
 def main():
@@ -31,14 +31,8 @@ def main():
     power["gnd"].drive = POWER
     ret = stm32(power, usb)
     key_matrix(kl.keys, ret["rows"], ret["cols"])
-    # RGB Matrix
-    leds(power, ret["per_key_leds_command"], kl.leds)
-    # Backlight LEDs (emulate keys to reuse leds goodies)
-    class BackLightKey(object):
-        def __init__(self, name):
-            self.label = name
-    bkls = [BackLightKey(F"BKL_{i}") for i in range(BACKLIGHT_LEDS_WIDTH)]
-    leds(power, ret["backlight_leds_command"], bkls)
+    per_key_leds(power, ret["per_key_leds_command"], kl.leds)
+    backlight_leds(power, ret["backlight_leds_command"], BACKLIGHT_LEDS_LENGTH)
 
 
 if __name__ == "__main__":
