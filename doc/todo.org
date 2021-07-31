@@ -1,0 +1,6 @@
+#+TITLE: KBD75 Mock TODO
+
+* PCB
+** Key modules modifications [0/2]
+- [ ] Invert Space keys stabs holes (large up, small down)
+- [ ]
