@@ -40,8 +40,8 @@ def stm32(power, usb):
                       for i in range(2)]
     stm32_usb = {F"STM32_USB_{pol}": Net(F"STM32_USB_{pol}")
                  for pol in ["P", "N"]}
-    stm32["PA11"] & stm32_usb["STM32_USB_N"] & usb_serial_res[0] & usb["USB_N"]
-    stm32["PA12"] & stm32_usb["STM32_USB_P"] & usb_serial_res[1] & usb["USB_P"]
+    stm32["PA11"] & stm32_usb["STM32_USB_N"] & usb_serial_res[0] & usb["usb_n"]
+    stm32["PA12"] & stm32_usb["STM32_USB_P"] & usb_serial_res[1] & usb["usb_p"]
     pull_updown(power["v33"], stm32_usb["STM32_USB_P"], "1.5K",
                 fields = {"JLCC": "C22843"})
 
@@ -86,7 +86,7 @@ def stm32(power, usb):
     for i, stm32_row_pin in enumerate(LAYOUT_ROWS):
         row_net = Net(F"ROW_{i}")
         stm32[stm32_row_pin] += row_net
-        cols.append(row_net)
+        rows.append(row_net)
 
     # LEDS strips command
     pklc = Net("PER_KEY_LED_COMMAND")    

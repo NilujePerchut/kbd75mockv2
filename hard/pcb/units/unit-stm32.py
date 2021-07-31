@@ -13,7 +13,7 @@ def unit_stm32():
     power = {"v33": Net("V33"), "gnd": Net("GND")}
     power["v33"].drive = POWER
     power["gnd"].drive = POWER
-    usb = {"USB_N": Net("USB_N"), "USB_P": Net("USB_P")}
+    usb = {"usb_n": Net("USB_N"), "usb_p": Net("USB_P")}
     in_nets = {**power, **usb}
     unit_map_on_he10(in_nets.values())
 
