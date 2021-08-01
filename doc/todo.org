@@ -1,5 +1,8 @@
 #+TITLE: KBD75 Mock TODO
 
+* Features
+- [X] Add a SIL4 for external USB connection
+
 * PCB
 ** Key modules modifications [0/2]
 - [ ] Invert Space keys stabs holes (large up, small down). To be validated (KBD75V2 compatibility only)
@@ -8,3 +11,11 @@
   - [X] JLCPCB fiducials
   - [X] JLCPCB tooling holes
   - [X] SAKURA
+
+** Placement
+- [ ] Place all key switch footprint using the data
+- [ ] Gather switch, LED, capa, diode in one python structure to ease the data retrival
+
+** MISC
+- [ ] Set the PCB to 4 layers
+- [ ] Set the pcb size to A3
