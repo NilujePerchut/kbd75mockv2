@@ -54,15 +54,32 @@ ELECTRICAL_LAYOUT_BY_LABEL = {
     "ENTERAINSI": (3,12), "BACKSLASHAINSI": (3,13), "ENTERISO": (3,13),
     "PGDN": (3,14),
     # Row 4
-    "LSHIFT": (4,0), "BACKSLASHISO": (4,1), "Z": (4,2), "X": (4,3), "C": (4,4),
-    "V": (4,5), "B": (4,6), "N": (4,7), "M": (4,8), "COMMA": (4,9),
-    "PERIOD": (4,10), "SLASH": (4,11), "RSHIFT":(4,12), "UPARROW": (4,13),
-    "END": (4,14),
+    "LSHIFTISO": (4,0), "LSHIFTAINSI": (4,0), "BACKSLASHISO": (4,1),
+    "Z": (4,2), "X": (4,3), "C": (4,4), "V": (4,5), "B": (4,6), "N": (4,7),
+    "M": (4,8), "COMMA": (4,9), "PERIOD": (4,10), "SLASH": (4,11),
+    "RSHIFT":(4,12), "UPARROW": (4,13), "END": (4,14),
     # Row 5
     "LCTRL": (5, 0), "WIN": (5,1), "ALT": (5,2), "LSPACE": (5,4),
-    "SPACE": (5, 6), "RSPACE": (5, 8), "ALTGR": (5,9), "MENU": (5,10),
-    "RCTRL": (5,11), "LEFTARROW": (5,12), "DOWNARROW": (5,13),
-    "RIGHTARROW": (5,14)
+    "SPACELONG": (5, 6), "SPACESHORT":(5, 6), "RSPACE": (5, 8),
+    "ALTGRSHORT": (5,9), "ALTGRLONG": (5,9), "MENU": (5,10),
+    "RCTRLSHORT": (5,11), "RCTRLLONG": (5,11),
+    "LEFTARROW": (5,12), "DOWNARROW": (5,13), "RIGHTARROW": (5,14)
+}
+
+
+ELECTRICAL_LAYOUT_DUPLICATED = {
+    "LSHIFTISO": "LSHIFTAINSI",
+    "LSHIFTAINSI": "LSHIFTISO",
+    "SPACESHORT": "SPACELONG",
+    "SPACELONG": "SPACESHORT",
+    "ALTGRSHORT": "ALTGRLONG",
+    "ALTGRLONG": "ALTGRSHORT",
+    "RCTRLSHORT": "RCTRLLONG",
+    "RCTRLLONG": "RCTRLSHORT",
+    "HASH": "ENTERAINSI",
+    "ENTERAINSI": "HASH",
+    "ENTERISO": "BACKSLASHAINSI",
+    "BACKSLASHAINSI": "ENTERISO",
 }
 
 
@@ -80,13 +97,13 @@ LEDS_LAYOUT = [# Row 0
                "PGDN", "ENTERAINSI", "HASH", "SINGLEQUOTE", "SEMICOLON", "L",
                "K", "J", "H", "G", "F", "D", "S", "A", "CAPSLOCK",
                # Row 4
-               "LSHIFT_1.25", "LSHIFT_2.25", "BACKSLASHISO", "Z", "X", "C", "V",
+               "LSHIFTISO", "LSHIFTAINSI", "BACKSLASHISO", "Z", "X", "C", "V",
                "B", "N", "M", "COMMA", "PERIOD", "SLASH", "RSHIFT", "UPARROW",
                "END",
                # Row 5
-               "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRL_1", "RCTRL_1.5",
-               "MENU", "ALTGR_1.5", "ALTGR_1", "RSPACE", "SPACE_1.25", 
-               "SPACE_6.25", "LSPACE", "ALT", "WIN", "LCTRL"]
+               "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRLLONG",
+               "RCTRLSHORT", "MENU", "ALTGRLONG", "ALTGRSHORT", "RSPACE",
+               "SPACESHORT", "SPACELONG", "LSPACE", "ALT", "WIN", "LCTRL"]
 
 
 def key_name_cleanup(label):
@@ -147,16 +164,13 @@ class KeebLayout(object):
         self.path = path
         self.keys =[] # Just all keys. No order
 
-    def get_key_from_label_then_width(self, label, width=None):
+    def get_key_from_label(self, label):
         """Return a key from given label, use width to disambiguous"""
         for k in self.keys:
             if k.label != label:
                 continue
-            if width is None:
-                return k
-            if k.params.get("w", 1) == width:
-                return k
-        raise ValueError(F"Key {label} (width:{width}) not found")
+            return k
+        raise ValueError(F"Key {label} not found")
 
     def parse(self):
         """Parses the JSON file"""
@@ -197,13 +211,7 @@ class KeebLayout(object):
         self.leds = []
         prev_led_key = None
         for i, led_label in enumerate(LEDS_LAYOUT):
-            if "_" in led_label:
-                label, width = led_label.split("_")
-                width = float(width)
-            else:
-                label = led_label
-                width = None
-            key = self.get_key_from_label_then_width(label, width)
+            key = self.get_key_from_label(led_label)
             key.led_index = i
             key.led_prev = prev_led_key
             if prev_led_key is not None:

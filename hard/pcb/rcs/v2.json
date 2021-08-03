@@ -97,12 +97,12 @@
     {
       "w": 1.25
     },
-    "LShift",
+    "LShift_iso",
     {
       "x": -1.25,
       "w": 2.25
     },
-    "LShift",
+    "LShift_ainsi",
     {
       "x": -1
     },
@@ -141,7 +141,7 @@
       "a": 7,
       "w": 6.25
     },
-    "Space",
+    "Space_long",
     {
       "x": -6.25,
       "w": 2.75
@@ -150,7 +150,7 @@
     {
       "w": 1.25
     },
-    "Space",
+    "Space_short",
     {
       "w": 2.25
     },
@@ -158,12 +158,12 @@
     {
       "a": 4
     },
-    "AltGr",
+    "AltGr_short",
     {
       "x": -1,
       "w": 1.5
     },
-    "AltGr",
+    "AltGr_long",
     {
       "x": -0.5
     },
@@ -172,11 +172,11 @@
       "x": -0.5,
       "w": 1.5
     },
-    "RCtrl",
+    "RCtrl_short",
     {
       "x": -1
     },
-    "RCtrl",
+    "RCtrl_long",
     "←",
     "↓",
     "→"

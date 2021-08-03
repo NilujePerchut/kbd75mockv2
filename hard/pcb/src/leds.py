@@ -24,9 +24,9 @@ def per_key_leds(power, command, keys_by_led_iterator):
                 fields={"descr": "level_shifter", "JLCC": "C14663"})
 
     for key in keys_by_led_iterator:
-        bypass_cap(power["v5v"], power["gnd"], ["100nF"],
-                   fields={"descr": "leds", "JLCC": "C14663"})
-        inst_led = dop_part("WS2812B", "SK6812-MINI-E",
+        #bypass_cap(power["v5v"], power["gnd"], ["100nF"],
+        #           fields={"descr": "leds", "JLCC": "C14663"})
+        inst_led = dop_part("WS2812B", "SK6812-MINI-E", value=key.label,
                             fields = {"descr": F"LED_{key.label}"})
 
         inst_led["VDD"] += power["v5v"]
