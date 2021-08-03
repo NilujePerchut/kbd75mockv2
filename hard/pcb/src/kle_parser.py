@@ -178,7 +178,6 @@ class KeebLayout(object):
                 pcb_pos_x += current_key.params.get("x", 0)
                 current_key.pcb_pos_x = pcb_pos_x
                 current_key.pcb_pos_y = pcb_pos_y
-                pcb_pos_x += w
 
                 # Electrical pos
                 electrical_pos = ELECTRICAL_LAYOUT_BY_LABEL[current_key.label]
@@ -188,6 +187,7 @@ class KeebLayout(object):
                 # We've done it
                 self.keys.append(current_key)
                 current_key = Key()
+                pcb_pos_x += w
             pcb_pos_y += 1
 
         # LED parsing

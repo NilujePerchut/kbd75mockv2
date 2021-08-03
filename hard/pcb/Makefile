@@ -20,6 +20,7 @@ JSON := $(RCS_DIR)/v2.json
 NETLIST := $(BUILD_DIR)/kbd75mock_v2.net
 UNITS := $(UNITS_PCB)
 PCB := $(BUILD_DIR)/kbd75mock_v2.kicad_pcb
+PLACED_PCB := $(BUILD_DIR)/kbd75mock_v2_placed.kicad_pcb
 
 
 # Rules
@@ -29,6 +30,20 @@ all: $(UNITS) $(PCB)
 
 clean:
 	rm -rf $(BUILD_DIR)
+
+pcb: $(PCB)
+
+place: build/placed.kicad_pcb
+
+build/placed.kicad_pcb: build/kbd75mock_v2.kicad_pcb
+	@echo building $@ from $<
+	@# SKIDL is generating log, erc and net files in the
+	@# top-level dir. So launch it from the build dir
+	( export KICAD_SYMBOL_DIR=$(KICAD_LIBS) && \
+	  export KIPRJLIB=$(NILUJE_KICAD_LIBS) && \
+	  export PYTHONPATH=$(PYTHONPATH) && \
+	  python3 $(SRC_DIR)/place.py $< $@)
+
 
 $(BUILD_DIR)/%.kicad_pcb: $(BUILD_DIR)/%.net
 	@echo building $@ from $<
