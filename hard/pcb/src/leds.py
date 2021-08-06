@@ -7,7 +7,8 @@ from sch_utils import dop_part, bypass_cap, get_res, pull_updown
 from sch_utils import get_capa
 
 
-def per_key_leds(power, command, keys_by_led_iterator):
+def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
+                 decoupling=False):
     """The LED chain"""
 
     # Command is in 3.3V, use a level shifter
@@ -24,9 +25,14 @@ def per_key_leds(power, command, keys_by_led_iterator):
                 fields={"descr": "level_shifter", "JLCC": "C14663"})
 
     for key in keys_by_led_iterator:
-        #bypass_cap(power["v5v"], power["gnd"], ["100nF"],
-        #           fields={"descr": "leds", "JLCC": "C14663"})
-        inst_led = dop_part("WS2812B", "SK6812-MINI-E", value=key.label,
+        if decoupling:
+            bypass_cap(power["v5v"], power["gnd"], ["100nF"],
+                       fields={"descr": "leds", "JLCC": "C14663"})
+        if backlight:
+            package = "LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+        else:
+            package = "SK6812-MINI-E"
+        inst_led = dop_part("WS2812B", package, value=key.label,
                             fields = {"descr": F"LED_{key.label}"})
 
         inst_led["VDD"] += power["v5v"]
@@ -49,5 +55,5 @@ def backlight_leds(power, command, chain_length, designator="BKL"):
 
     bkls = [BackLightKey(F"{designator}{i}")
             for i in range(chain_length)]
-    per_key_leds(power, command, bkls)
+    per_key_leds(power, command, bkls, backlight=True)
 
