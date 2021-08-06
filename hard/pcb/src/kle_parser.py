@@ -59,8 +59,7 @@ ELECTRICAL_LAYOUT_BY_LABEL = {
     "M": (4,8), "COMMA": (4,9), "PERIOD": (4,10), "SLASH": (4,11),
     "RSHIFT":(4,12), "UPARROW": (4,13), "END": (4,14),
     # Row 5
-    "LCTRL": (5, 0), "WIN": (5,1), "ALT": (5,2), "LSPACE": (5,4),
-    "SPACELONG": (5, 6), "SPACESHORT":(5, 6), "RSPACE": (5, 8),
+    "LCTRL": (5, 0), "WIN": (5,1), "ALT": (5,2), "SPACE": (5, 6),
     "ALTGRSHORT": (5,9), "ALTGRLONG": (5,9), "MENU": (5,10),
     "RCTRLSHORT": (5,11), "RCTRLLONG": (5,11),
     "LEFTARROW": (5,12), "DOWNARROW": (5,13), "RIGHTARROW": (5,14)
@@ -70,8 +69,6 @@ ELECTRICAL_LAYOUT_BY_LABEL = {
 ELECTRICAL_LAYOUT_DUPLICATED = {
     "LSHIFTISO": "LSHIFTAINSI",
     "LSHIFTAINSI": "LSHIFTISO",
-    "SPACESHORT": "SPACELONG",
-    "SPACELONG": "SPACESHORT",
     "ALTGRSHORT": "ALTGRLONG",
     "ALTGRLONG": "ALTGRSHORT",
     "RCTRLSHORT": "RCTRLLONG",
@@ -102,8 +99,8 @@ LEDS_LAYOUT = [# Row 0
                "END",
                # Row 5
                "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRLLONG",
-               "RCTRLSHORT", "MENU", "ALTGRLONG", "ALTGRSHORT", "RSPACE",
-               "SPACESHORT", "SPACELONG", "LSPACE", "ALT", "WIN", "LCTRL"]
+               "RCTRLSHORT", "MENU", "ALTGRLONG", "ALTGRSHORT", "SPACE",
+               "ALT", "WIN", "LCTRL"]
 
 
 def key_name_cleanup(label):
