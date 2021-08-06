@@ -101,6 +101,9 @@ LEDS_LAYOUT = [# Row 0
                "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRLLONG",
                "RCTRLSHORT", "MENU", "ALTGRLONG", "ALTGRSHORT", "SPACE",
                "ALT", "WIN", "LCTRL"]
+# The whole list needs to be reversed because we are starting from the 
+# bottom left
+LEDS_LAYOUT.reverse()
 
 
 def key_name_cleanup(label):

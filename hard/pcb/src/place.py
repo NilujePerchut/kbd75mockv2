@@ -73,7 +73,7 @@ def place_led(label, assoc):
     pos.y += FromMM(9)
     led.SetPosition(pos)
     led.Flip(led.GetCenter())
-    if (key.electrical_row%2) == 0:
+    if (key.electrical_row%2) == 1:
         led.SetOrientation(180*10)
 
 
