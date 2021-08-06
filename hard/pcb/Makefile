@@ -33,9 +33,11 @@ clean:
 
 pcb: $(PCB)
 
-place: build/placed.kicad_pcb
+place: $(PLACED_PCB)
 
-build/placed.kicad_pcb: build/kbd75mock_v2.kicad_pcb
+netlist: $(NETLIST)
+
+$(PLACED_PCB): $(PCB)
 	@echo building $@ from $<
 	@# SKIDL is generating log, erc and net files in the
 	@# top-level dir. So launch it from the build dir
@@ -51,7 +53,8 @@ $(BUILD_DIR)/%.kicad_pcb: $(BUILD_DIR)/%.net
 	@# top-level dir. So launch it from the build dir
 	( export KIPRJMOD=$(NILUJE_KICAD_LIBS) && \
 	  export KISYSMOD=$(KICAD_MODS) && \
-	  python $(NILUJE_KICAD_LIBS)/kinet2pcb.py -d7 -w -nb --input $< --output $@ \
+	  python $(NILUJE_KICAD_LIBS)/kinet2pcb.py -d7 -w -nb --input $< --output $@ && \
+	  sed -i 's/page A4/page A3/' $@ \
 	)
 
 $(BUILD_DIR)/%.net: $(UNITS_DIR)/%.py | $(BUILD_DIR) 
