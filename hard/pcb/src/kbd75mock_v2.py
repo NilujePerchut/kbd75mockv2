@@ -12,6 +12,7 @@ from src.stm32 import stm32
 from src.key_matrix import key_matrix
 from src.leds import per_key_leds, backlight_leds
 from src.kle_parser import KeebLayout
+from src.mechs import mechs
 
 
 KLE_JSON_FILE = "../rcs/v2.json"
@@ -33,7 +34,7 @@ def main():
     key_matrix(kl.keys, ret["rows"], ret["cols"])
     per_key_leds(power, ret["per_key_leds_command"], kl.leds)
     backlight_leds(power, ret["backlight_leds_command"], BACKLIGHT_LEDS_LENGTH)
-
+    mechs()
 
 if __name__ == "__main__":
     lib_search_paths[KICAD].append(os.environ["KIPRJLIB"])
