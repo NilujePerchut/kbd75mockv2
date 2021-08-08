@@ -32,8 +32,10 @@ def main():
     power["gnd"].drive = POWER
     ret = stm32(power, usb)
     key_matrix(kl.keys, ret["rows"], ret["cols"])
-    per_key_leds(power, ret["per_key_leds_command"], kl.leds)
-    backlight_leds(power, ret["backlight_leds_command"], BACKLIGHT_LEDS_LENGTH)
+    command = per_key_leds(power, ret["per_key_leds_command"], kl.leds,
+                           returns=True)
+    backlight_leds(power, ret["backlight_leds_command"], BACKLIGHT_LEDS_LENGTH,
+                   alternate_command=command)
     mechs()
 
 if __name__ == "__main__":

@@ -18,6 +18,7 @@ U1 = FromMM(19.05)
 def create_assoc_map(layout, pcb):
     """Create a big struct which gathers switch, capa, diode, led"""
     ret = {}
+    bl = {}
     for module in pcb.GetModules():
         lib_name = str(module.GetFPID().GetLibItemName())
         label = module.GetValue()
@@ -27,11 +28,10 @@ def create_assoc_map(layout, pcb):
         elif "D_SOD-123F" in lib_name:
             prop = "diode"
         elif "SK6812-MINI-E" in lib_name:
-            if label.startswith("BKL"):
-                # This is a backlight led
-                # TODO: handle it !
-                continue
             prop = "led"
+        elif "LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" in lib_name:
+            bl[label] = module
+            continue
         else:
             continue
 
@@ -40,7 +40,7 @@ def create_assoc_map(layout, pcb):
             ret[label] = {"key": key, "switch": None, "diode": None,
                           "led": None}
         ret[label][prop] = module
-    return ret
+    return ret, bl
 
 
 def place_key(label, assoc):
@@ -102,14 +102,35 @@ def place_diode(label, assoc):
     diode.SetOrientation(90*10)
 
 
+def place_backlight(backlight_assoc):
+    """Place the backlight diodes"""
+    pos = wxPoint(*TOP_LEFT)
+    pos.x += FromMM(7)
+    pos.y += FromMM(14.5)
+    labels = sorted(backlight_assoc.keys(), key=lambda x: int(x[3:]))
+    for i, label in enumerate(labels):
+        module = backlight_assoc[label]
+        module.SetPosition(pos)
+        module.Flip(module.GetCenter())
+        if i < 7:
+            pos.x += 2 * U1
+            module.SetOrientation(180*10)
+        elif i == 7:
+            pos.y += 4 * U1
+            module.SetOrientation(180*10)
+        else:
+            pos.x -= 2 * U1
+
+
 def place(unplaced, placed, layout):
     """Place every stuff"""
     pcb = pcbnew.LoadBoard(unplaced)
-    am = create_assoc_map(layout, pcb) 
+    am, bl = create_assoc_map(layout, pcb) 
     for label, assoc in am.items():
         place_key(label, assoc)
         place_led(label, assoc)
         place_diode(label, assoc)
+    place_backlight(bl)
 
     pcbnew.SaveBoard(placed, pcb)
 
