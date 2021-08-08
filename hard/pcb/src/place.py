@@ -76,8 +76,16 @@ def place_led(label, assoc):
     pos.y += FromMM(9)
     led.SetPosition(pos)
     led.Flip(led.GetCenter())
-    if (key.electrical_row%2) == 1:
+    if (get_led_row(label)%2) == 1:
+        # Return the LED to allow chain connection
         led.SetOrientation(180*10)
+        # Need to rotate the designator too
+        led.Reference().SetTextAngle(180*10)
+    else:
+        # Need to push designator down to avoid the switch main hole
+        pos = led.Reference().GetPosition()
+        pos.y += FromMM(4.2)
+        led.Reference().SetPosition(pos)
 
 
 def place_diode(label, assoc):
