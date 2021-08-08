@@ -16,6 +16,8 @@ def key_matrix(keys, rows, cols):
         width = key.params.get("w", 1)
         if key.label == "ENTERISO":
             package_name = "SW_Cherry_MX_ISOEnter_PCB"
+        elif key.label == "SPACE":
+            package_name = "SW_Cherry_MX_6.25u_PCB_ROTATED"
         else:
             package_name = F"SW_Cherry_MX_{width:.02f}u_PCB"
         key_symb = dop_part("SW_PUSH", package_name, value=key.label)
