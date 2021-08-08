@@ -8,7 +8,7 @@ from sch_utils import get_capa
 
 
 def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
-                 decoupling=False):
+                 decoupling=False, alternate_command=None, returns=False):
     """The LED chain"""
 
     # Command is in 3.3V, use a level shifter
@@ -22,7 +22,14 @@ def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
     level_shifter["A"] += command
     level_shifter["Y"] += current_command
     bypass_cap(power["v5v"], power["gnd"], ["100nF"],
-                fields={"descr": "level_shifter", "JLCC": "C14663"})
+               fields={"descr": "level_shifter", "JLCC": "C14663"})
+
+    if alternate_command:
+        cmd_sw = dop_part("CONN_01X03", "gs3_r")
+        cmd_sw[1] += current_command
+        cmd_sw[3] += alternate_command
+        current_command = Net()
+        cmd_sw[2] += current_command
 
     for key in keys_by_led_iterator:
         if decoupling:
@@ -41,13 +48,17 @@ def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
         current_command = Net()
         inst_led["DOUT"] += current_command
 
-    # Cleans up the unconnected last DOUT
-    inst_led["DOUT"].disconnect()
-    inst_led["DOUT"] += NC
-    default_circuit.rmv_nets(current_command)
+    if returns:
+        return current_command
+    else:
+        # Cleans up the unconnected last DOUT
+        inst_led["DOUT"].disconnect()
+        inst_led["DOUT"] += NC
+        default_circuit.rmv_nets(current_command)
 
 
-def backlight_leds(power, command, chain_length, designator="BKL"):
+def backlight_leds(power, command, chain_length, designator="BKL",
+                   alternate_command=None):
     """Creates a backlight chain using SK6812-MINI-E leds"""
     class BackLightKey(object):
         def __init__(self, name):
@@ -55,5 +66,6 @@ def backlight_leds(power, command, chain_length, designator="BKL"):
 
     bkls = [BackLightKey(F"{designator}{i}")
             for i in range(chain_length)]
-    per_key_leds(power, command, bkls, backlight=True)
+    per_key_leds(power, command, bkls, backlight=True,
+                 alternate_command=alternate_command)
 

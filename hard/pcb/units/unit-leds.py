@@ -25,8 +25,10 @@ def unit_leds():
 
     iterator = [FakeKey(F"LED_{i}") for i in range(10)]
 
-    per_key_leds(power, commands["per_key"], iterator)
-    backlight_leds(power, commands["backlight"], 10)
+    current_command = per_key_leds(power, commands["per_key"], iterator,
+                                   returns=True)
+    backlight_leds(power, commands["backlight"], 10,
+                   alternate_command=current_command)
 
 
 if __name__ == "__main__":
