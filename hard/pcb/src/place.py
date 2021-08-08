@@ -7,6 +7,7 @@ from math import trunc
 from pcbnew import FromMM, wxPoint
 
 from src.kle_parser import KeebLayout
+from src.kle_parser import get_led_row
 
 
 KLE_JSON_FILE = "rcs/v2.json"
@@ -67,6 +68,8 @@ def place_led(label, assoc):
     """Place the led"""
     switch = assoc["switch"]
     led = assoc["led"]
+    if led is None:
+        return
     key = assoc["key"]
     pos = switch.GetPosition()
     pos.x -= FromMM(3*3.4/4) 

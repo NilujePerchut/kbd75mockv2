@@ -11,6 +11,19 @@ import argparse
     - PCB layout:
         - x & y location on PCB
 """
+
+
+def flatten(the_list):
+    """Just flatten a list"""
+    ret = []
+    for element in the_list:
+        if isinstance(element, list):
+            ret += flatten(element)
+        else:
+            ret.append(element)
+    return ret
+
+
 KEY_TRANSLATE = {
     "`": "BACKQUOTE",
     "-": "MINUS",
@@ -79,31 +92,40 @@ ELECTRICAL_LAYOUT_DUPLICATED = {
     "BACKSLASHAINSI": "ENTERISO",
 }
 
-
-LEDS_LAYOUT = [# Row 0
+LEDS_RAW = [ [ # Row 0
                "ESC", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9",
-               "F10", "F11", "F12", "PRTSC", "PAUSE", "DEL",
-               # Row 1
+               "F10", "F11", "F12", "PRTSC", "PAUSE", "DEL"],
+             [ # Row 1
                "HOME", "BACKSPACE", "EQUAL", "MINUS", "0", "9", "8", "7", "6",
-               "5", "4", "3", "2", "1", "BACKQUOTE",
-               # Row 2
+               "5", "4", "3", "2", "1", "BACKQUOTE"],
+             [ # Row 2
                "TAB", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
                "LEFTBRACKET", "RIGHTBRACKET", "BACKSLASHAINSI", "ENTERISO",
-               "PGUP",
-               # Row 3
+               "PGUP"],
+             [ # Row 3
                "PGDN", "ENTERAINSI", "HASH", "SINGLEQUOTE", "SEMICOLON", "L",
-               "K", "J", "H", "G", "F", "D", "S", "A", "CAPSLOCK",
-               # Row 4
+               "K", "J", "H", "G", "F", "D", "S", "A", "CAPSLOCK"],
+             [ # Row 4
                "LSHIFTISO", "LSHIFTAINSI", "BACKSLASHISO", "Z", "X", "C", "V",
                "B", "N", "M", "COMMA", "PERIOD", "SLASH", "RSHIFT", "UPARROW",
-               "END",
-               # Row 5
-               "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRLLONG",
-               "RCTRLSHORT", "MENU", "ALTGRLONG", "ALTGRSHORT", "SPACE",
-               "ALT", "WIN", "LCTRL"]
+               "END"],
+             [ # Row 5
+               "RIGHTARROW", "DOWNARROW", "LEFTARROW", "RCTRLLONG", "MENU",
+               "ALTGRLONG", "SPACE", "ALT", "WIN", "LCTRL"],
+            ]
+
+LEDS_LAYOUT = flatten(LEDS_RAW)
 # The whole list needs to be reversed because we are starting from the 
 # bottom left
 LEDS_LAYOUT.reverse()
+
+
+def get_led_row(label):
+    """Returns the row of the given key"""
+    for row, keys in enumerate(LEDS_RAW):
+        if label in keys:
+            return row
+    return None
 
 
 def key_name_cleanup(label):
