@@ -31,6 +31,8 @@ all: $(UNITS) $(PCB)
 clean:
 	rm -rf $(BUILD_DIR)
 
+units: $(UNITS)
+
 pcb: $(PCB)
 
 place: $(PLACED_PCB)

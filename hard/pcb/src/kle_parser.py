@@ -146,7 +146,6 @@ def get_first_key_from_label(label, row):
     return None
 
 
-
 class Key(object):
     """A dumb class that describes a key"""
 
