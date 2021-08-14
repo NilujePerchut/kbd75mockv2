@@ -195,9 +195,11 @@ class KeebLayout(object):
 
     def parse(self):
         """Parses the JSON file"""
+        layout = json.load(open(self.path))
+        self.nb_row = len(layout)
         pcb_pos_y = 0 # in Us
         # Physical and Electrical parsing
-        for i, row in enumerate(json.load(open(self.path))):
+        for i, row in enumerate(layout):
             current_key = Key()
             pcb_pos_x = 0 # in Us
             for k in row:
