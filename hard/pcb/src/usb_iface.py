@@ -37,10 +37,8 @@ def usb_iface():
                                      "JLCC": "2800840", "JLROT": "0"})
 
     # USB + its ESD protection
-    # Also contains serial 0 Ohm resistors and SIL4 connector for hand
-    # wire connect option
-    serial_res = [get_res("0", "0603", fields={"JLCC": "C21189"})
-                  for i in range(2)]
+    # For external USB connection, a sil 4 connector is provided
+    #   In this case ESD filter must be removed
     sil4_conn = dop_part("CONN_01X04", "SIL4")
     sil4_conn[1] += vbus
     sil4_conn[4] += power["gnd"]
@@ -49,8 +47,8 @@ def usb_iface():
     usb_conn_dn = Net("USB_CONN_DN")
     usb_conn["A6"] += usb_conn_dp
     usb_conn["A7"] += usb_conn_dn
-    usb_conn["D+"] & usb_conn_dp & serial_res[0] & sil4_conn[2] & esd_prot[3,4] & usb["usb_p"]
-    usb_conn["D-"] & usb_conn_dn & serial_res[1] & sil4_conn[3] & esd_prot[1,6] & usb["usb_n"]
+    usb_conn["D+"] & usb_conn_dp & esd_prot[1,6] & sil4_conn[2] & usb["usb_p"]
+    usb_conn["D-"] & usb_conn_dn & esd_prot[3,4] & sil4_conn[3] & usb["usb_n"]
     esd_prot[5] & vbus & ferrite[1,2] & power["v5v"]
     bypass_cap(vbus, power["gnd"], "100nF")
     esd_prot[2] += power["gnd"]
