@@ -18,6 +18,8 @@ def key_matrix(keys, rows, cols):
             package_name = "SW_Cherry_MX_ISOEnter_PCB"
         elif key.label == "SPACE":
             package_name = "SW_Cherry_MX_6.25u_PCB_ROTATED"
+        elif key.label == "BACKSLASHAINSI":
+            package_name = "SW_Cherry_MX_1.50u_PCB_ainsi_backslash"
         else:
             package_name = F"SW_Cherry_MX_{width:.02f}u_PCB"
         key_symb = dop_part("SW_PUSH", package_name, value=key.label)
