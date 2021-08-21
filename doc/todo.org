@@ -1,21 +1,51 @@
 #+TITLE: KBD75 Mock TODO
 
-* Features
+* Features [2/3]
 - [X] Add a SIL4 for external USB connection
+- [ ] Add GPLV3 header on each files
+- [X] Add Licence file
+
+
+* Netlist [5/5]
+- [X] Generate a JSON file with unique keys and a duplicate dict
+- [X] Add some capas (tank+100nF) capas
+- [X] Switch backlight LED to 5050 format
+- [X] Add passive component value to netlist
+- [X] Re-think the external USB connection
+
 
 * PCB
-** Key modules modifications [0/2]
-- [ ] Invert Space keys stabs holes (large up, small down). To be validated (KBD75V2 compatibility only)
-- [-] Add mechanics
-  - [ ] Screw holes
+** Key modules modifications [2/2]
+- [X] Invert Space key stabs holes
+- [X] Add mechanics
+  - [X] Screw holes
   - [X] JLCPCB fiducials
   - [X] JLCPCB tooling holes
   - [X] SAKURA
+- [ ] Adjust Screw holes
 
-** Placement
-- [ ] Place all key switch footprint using the data
-- [ ] Gather switch, LED, capa, diode in one python structure to ease the data retrival
+** Footprints [1/1]
+- [X] decal backslash_ainsi switch pcb hole to allow soldering
+
+** Placement [5/7]
+- [X] Place all key switch footprint using the data
+- [X] Gather switch, LED, capa, diode in one python structure to ease the data retrival
+- [X] Per key LEDs
+  - [X] Place per key LED
+  - [X] Only use one LED for both AltGr and RightCtrl
+  - [X] Adjust designator (rotation, avoid hole)
+- [X] Place LED (backlight)
+- [?] Place LED capa (no one capa per led but just a bunch of capa)
+- [X] Place key diode
+- [ ] Place the USB connector
+- [ ] Place the STM32
+
+** Routing [0/1]
+- [ ] Creates signal classes
+ - [ ] Setup trace widths
+- [ ] Creates outline
 
 ** MISC
-- [ ] Set the PCB to 4 layers
-- [ ] Set the pcb size to A3
+- [?] Set the PCB to 4 layers (compare with Doppleganger PCB)
+- [X] Set the pcb size to A3
+- [ ] Ajouter les info de cartouche
