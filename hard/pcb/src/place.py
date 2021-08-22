@@ -4,7 +4,7 @@
 import pcbnew
 import argparse
 from math import trunc
-from pcbnew import FromMM, wxPoint
+from pcbnew import FromMM, FromMils, wxPoint
 
 from src.kle_parser import KeebLayout
 from src.kle_parser import get_led_row
@@ -122,6 +122,31 @@ def place_backlight(backlight_assoc):
             pos.x -= 2 * U1
 
 
+def place_fixes(pcb):
+    """Place the fixes"""
+    FIXES_LOCATIONS = [( 1.5*U1, 0*U1), # Between F1 and F2
+                       ( 5.5*U1, 0*U1), # Between F5 and F6
+                       ( 9.5*U1, 0*U1), # Between F9 and F10
+                       (13.5*U1, 0*U1), # Between Prntscrn and Pause
+                       (0.75*U1, 2*U1), # Between Tab and A
+                       (13.125*U1, 2*U1), # Between Pound & Enter
+                       (5.5*U1 + 0.75*U1, 3*U1), # Between G & H
+                       (0.75*U1, 5*U1), # Between LCtrl and Win
+                       (9.5*U1, 5*U1), # Between Space and AltGr
+                       (13.5*U1, 5*U1), # Between Left and Down()
+                      ]
+    fixes = []
+    for module in pcb.GetModules():
+        lib_name = str(module.GetFPID().GetLibItemName())
+        if lib_name == "FIX_KEYBOARD":
+            fixes.append(module)
+
+    for i, f in enumerate(fixes):
+        posx = TOP_LEFT[0] + FIXES_LOCATIONS[i][0] - FromMils(100)
+        posy = TOP_LEFT[1] + FIXES_LOCATIONS[i][1] + FromMils(200)
+        f.SetPosition(wxPoint(posx, posy))
+
+
 def place(unplaced, placed, layout):
     """Place every stuff"""
     pcb = pcbnew.LoadBoard(unplaced)
@@ -131,6 +156,7 @@ def place(unplaced, placed, layout):
         place_led(label, assoc)
         place_diode(label, assoc)
     place_backlight(bl)
+    place_fixes(pcb)
 
     pcbnew.SaveBoard(placed, pcb)
 
