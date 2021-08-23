@@ -1,0 +1,2113 @@
+C1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 126428500
+  - 54102000
+C10:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 64960500
+  - 204533500
+C11:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 104584500
+C12:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 104584500
+C13:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 104584500
+C14:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 122872500
+C15:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 122872500
+C16:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 122872500
+C17:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 143002000
+C18:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 142811500
+C19:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 142684500
+C2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 132334000
+  - 53975000
+C20:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 160337500
+C21:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 160337500
+C22:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 160337500
+C23:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 181102000
+C24:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 181102000
+C25:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 181102000
+C26:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 43942000
+  - 199390000
+C27:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 48679100
+  - 199390000
+C28:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 53416200
+  - 199390000
+C29:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 104838500
+C3:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 138518900
+  - 53911500
+C30:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 123126500
+C31:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 142938500
+C32:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 160591500
+C33:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 181356000
+C34:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 58331100
+  - 199644000
+C4:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 166370000
+  - 205613000
+C5:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 174752000
+  - 191135000
+C6:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 167640000
+  - 192087500
+C7:
+  flipped: true
+  orientation: 2700.0
+  position:
+  - 311086500
+  - 124523500
+C8:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 178689000
+  - 201041000
+C9:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 66929000
+  - 108267500
+D1:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 93218000
+  - 155511500
+D10:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 229900000
+  - 101450000
+D100:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 286762500
+  - 185200000
+D101:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 267712500
+  - 185200000
+D102:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 248662500
+  - 185200000
+D103:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 229612500
+  - 185200000
+D104:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 210562500
+  - 185200000
+D105:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 191512500
+  - 185200000
+D106:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 172462500
+  - 185200000
+D107:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 153412500
+  - 185200000
+D108:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 134362500
+  - 185200000
+D109:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 115312500
+  - 185200000
+D11:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 248950000
+  - 101450000
+D110:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 96262500
+  - 185200000
+D111:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 84356250
+  - 185200000
+D112:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 74831250
+  - 185200000
+D113:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 79593750
+  - 166150000
+D114:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 105787500
+  - 166150000
+D115:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 124837500
+  - 166150000
+D116:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 143887500
+  - 166150000
+D117:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 162937500
+  - 166150000
+D118:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 181987500
+  - 166150000
+D119:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 201037500
+  - 166150000
+D12:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 268000000
+  - 101450000
+D120:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 220087500
+  - 166150000
+D121:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 239137500
+  - 166150000
+D122:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 258187500
+  - 166150000
+D123:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 277237500
+  - 166150000
+D124:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 296287500
+  - 166150000
+D125:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 315337500
+  - 166150000
+D126:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 327243750
+  - 166150000
+D127:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 358200000
+  - 166150000
+D128:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 358200000
+  - 147100000
+D129:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 336768750
+  - 156600000
+D13:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 287050000
+  - 101450000
+D130:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 334387500
+  - 147100000
+D131:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 310575000
+  - 147100000
+D132:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 291525000
+  - 147100000
+D133:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 272475000
+  - 147100000
+D134:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 253425000
+  - 147100000
+D135:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 234375000
+  - 147100000
+D136:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 215325000
+  - 147100000
+D137:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 196275000
+  - 147100000
+D138:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 177225000
+  - 147100000
+D139:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 158175000
+  - 147100000
+D14:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 306100000
+  - 101450000
+D140:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 139125000
+  - 147100000
+D141:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 120075000
+  - 147100000
+D142:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 101025000
+  - 147100000
+D143:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 77212500
+  - 147100000
+D144:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 72450000
+  - 128050000
+D145:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 91500000
+  - 128050000
+D146:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 110550000
+  - 128050000
+D147:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 129600000
+  - 128050000
+D148:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 148650000
+  - 128050000
+D149:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 167700000
+  - 128050000
+D15:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 325150000
+  - 101450000
+D150:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 186750000
+  - 128050000
+D151:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 205800000
+  - 128050000
+D152:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 224850000
+  - 128050000
+D153:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 243900000
+  - 128050000
+D154:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 262950000
+  - 128050000
+D155:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 282000000
+  - 128050000
+D156:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 301050000
+  - 128050000
+D157:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 329625000
+  - 128050000
+D158:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 358200000
+  - 128050000
+D159:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 358200000
+  - 109000000
+D16:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 344200000
+  - 101450000
+D160:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 339150000
+  - 109000000
+D161:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 320100000
+  - 109000000
+D162:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 301050000
+  - 109000000
+D163:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 282000000
+  - 109000000
+D164:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 262950000
+  - 109000000
+D165:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 243900000
+  - 109000000
+D166:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 224850000
+  - 109000000
+D167:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 205800000
+  - 109000000
+D168:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 186750000
+  - 109000000
+D169:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 167700000
+  - 109000000
+D17:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 101450000
+D170:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 148650000
+  - 109000000
+D171:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 129600000
+  - 109000000
+D172:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 110550000
+  - 109000000
+D173:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 91500000
+  - 109000000
+D174:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 72450000
+  - 109000000
+D175:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 82000000
+  - 114500000
+D176:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 120100000
+  - 114500000
+D177:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 158200000
+  - 114500000
+D178:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 196300000
+  - 114500000
+D179:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 234400000
+  - 114500000
+D18:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 77500000
+  - 120500000
+D180:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 272500000
+  - 114500000
+D181:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 310600000
+  - 114500000
+D182:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 348700000
+  - 114500000
+D183:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 348700000
+  - 190700000
+D184:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 310600000
+  - 190700000
+D185:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 272500000
+  - 190700000
+D186:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 234400000
+  - 190700000
+D187:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 196300000
+  - 190700000
+D188:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 158200000
+  - 190700000
+D189:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 120100000
+  - 190700000
+D19:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 96550000
+  - 120500000
+D190:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 82000000
+  - 190700000
+D2:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 77500000
+  - 101450000
+D20:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 115600000
+  - 120500000
+D21:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 134650000
+  - 120500000
+D22:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 153700000
+  - 120500000
+D23:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 172750000
+  - 120500000
+D24:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 191800000
+  - 120500000
+D25:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 210850000
+  - 120500000
+D26:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 229900000
+  - 120500000
+D27:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 248950000
+  - 120500000
+D28:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 268000000
+  - 120500000
+D29:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 287050000
+  - 120500000
+D3:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 96550000
+  - 101450000
+D30:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 306100000
+  - 120500000
+D31:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 334675000
+  - 120500000
+D32:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 120500000
+D33:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 82262500
+  - 139550000
+D34:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 106075000
+  - 139550000
+D35:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 125125000
+  - 139550000
+D36:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 144175000
+  - 139550000
+D37:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 163225000
+  - 139550000
+D38:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 182275000
+  - 139550000
+D39:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 201325000
+  - 139550000
+D4:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 115600000
+  - 101450000
+D40:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 220375000
+  - 139550000
+D41:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 239425000
+  - 139550000
+D42:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 258475000
+  - 139550000
+D43:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 277525000
+  - 139550000
+D44:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 296575000
+  - 139550000
+D45:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 315625000
+  - 139550000
+D46:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 339437500
+  - 139550000
+D47:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 139550000
+D48:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 84643750
+  - 158600000
+D49:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 110837500
+  - 158600000
+D5:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 134650000
+  - 101450000
+D50:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 129887500
+  - 158600000
+D51:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 148937500
+  - 158600000
+D52:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 167987500
+  - 158600000
+D53:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 187037500
+  - 158600000
+D54:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 206087500
+  - 158600000
+D55:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 225137500
+  - 158600000
+D56:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 244187500
+  - 158600000
+D57:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 263237500
+  - 158600000
+D58:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 282287500
+  - 158600000
+D59:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 301337500
+  - 158600000
+D6:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 153700000
+  - 101450000
+D60:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 320387500
+  - 158600000
+D61:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 158600000
+D62:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 79881250
+  - 177650000
+D63:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 101312500
+  - 177650000
+D64:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 120362500
+  - 177650000
+D65:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 139412500
+  - 177650000
+D66:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 158462500
+  - 177650000
+D67:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 177512500
+  - 177650000
+D68:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 196562500
+  - 177650000
+D69:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 215612500
+  - 177650000
+D7:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 172750000
+  - 101450000
+D70:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 234662500
+  - 177650000
+D71:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 253712500
+  - 177650000
+D72:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 272762500
+  - 177650000
+D73:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 291812500
+  - 177650000
+D74:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 318006250
+  - 177650000
+D75:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 344200000
+  - 177650000
+D76:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 177650000
+D77:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 79881250
+  - 196700000
+D78:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 103693750
+  - 196700000
+D79:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 127506250
+  - 196700000
+D8:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 191800000
+  - 101450000
+D80:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 198943750
+  - 196700000
+D81:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 268000000
+  - 196700000
+D82:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 287050000
+  - 196700000
+D83:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 301337500
+  - 196700000
+D84:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 325150000
+  - 196700000
+D85:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 344200000
+  - 196700000
+D86:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 363250000
+  - 196700000
+D87:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 74831250
+  - 204250000
+D88:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 98643750
+  - 204250000
+D89:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 122456250
+  - 204250000
+D9:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 210850000
+  - 101450000
+D90:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 193893750
+  - 204250000
+D91:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 267712500
+  - 204250000
+D92:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 282000000
+  - 204250000
+D93:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 301050000
+  - 204250000
+D94:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 320100000
+  - 204250000
+D95:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 339150000
+  - 204250000
+D96:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 358200000
+  - 204250000
+D97:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 358200000
+  - 185200000
+D98:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 339150000
+  - 185200000
+D99:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 312956250
+  - 185200000
+F1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 88010600
+  - 32004000
+F10:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 329635000
+  - 200330000
+F11:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 253435000
+  - 200330000
+F12:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 86747500
+  - 200330000
+F13:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 191522500
+  - 162230000
+F2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 83311800
+  - 32004000
+F3:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 78613000
+  - 32004000
+F4:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 322491250
+  - 143180000
+F5:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 86747500
+  - 143180000
+F6:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 329635000
+  - 105080000
+F7:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 253435000
+  - 105080000
+F8:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 177235000
+  - 105080000
+F9:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 101035000
+  - 105080000
+FID1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 97180200
+  - 32004000
+FID2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 92633400
+  - 32004000
+FID3:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 101727000
+  - 32004000
+J1:
+  flipped: true
+  orientation: 0.0
+  position:
+  - 123952000
+  - 94869000
+L1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 105092500
+  - 54356000
+P1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 79184500
+  - 54356000
+P2:
+  flipped: true
+  orientation: 2700.0
+  position:
+  - 183642000
+  - 199326500
+P3:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 69913500
+  - 112903000
+R1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 121031000
+  - 54038500
+R2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 117411500
+  - 54038500
+R3:
+  flipped: true
+  orientation: 900.0
+  position:
+  - 172148500
+  - 191833500
+R4:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 170180000
+  - 205613000
+R5:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 163830000
+  - 198945500
+R6:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 163830000
+  - 197104000
+R7:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 165354000
+  - 194881500
+R8:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 179451000
+  - 198501000
+R9:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 93091000
+  - 157988000
+S1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 217360500
+  - 199072500
+SW1:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 316357000
+  - 124523500
+SW10:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 227400000
+  - 100000000
+SW11:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 246450000
+  - 100000000
+SW12:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 265500000
+  - 100000000
+SW13:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 284550000
+  - 100000000
+SW14:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 303600000
+  - 100000000
+SW15:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 322650000
+  - 100000000
+SW16:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 341700000
+  - 100000000
+SW17:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 100000000
+SW18:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 75000000
+  - 119050000
+SW19:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 94050000
+  - 119050000
+SW2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 75000000
+  - 100000000
+SW20:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 113100000
+  - 119050000
+SW21:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 132150000
+  - 119050000
+SW22:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 151200000
+  - 119050000
+SW23:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 170250000
+  - 119050000
+SW24:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 189300000
+  - 119050000
+SW25:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 208350000
+  - 119050000
+SW26:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 227400000
+  - 119050000
+SW27:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 246450000
+  - 119050000
+SW28:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 265500000
+  - 119050000
+SW29:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 284550000
+  - 119050000
+SW3:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 94050000
+  - 100000000
+SW30:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 303600000
+  - 119050000
+SW31:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 332175000
+  - 119050000
+SW32:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 119050000
+SW33:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 79762500
+  - 138100000
+SW34:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 103575000
+  - 138100000
+SW35:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 122625000
+  - 138100000
+SW36:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 141675000
+  - 138100000
+SW37:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 160725000
+  - 138100000
+SW38:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 179775000
+  - 138100000
+SW39:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 198825000
+  - 138100000
+SW4:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 113100000
+  - 100000000
+SW40:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 217875000
+  - 138100000
+SW41:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 236925000
+  - 138100000
+SW42:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 255975000
+  - 138100000
+SW43:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 275025000
+  - 138100000
+SW44:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 294075000
+  - 138100000
+SW45:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 313125000
+  - 138100000
+SW46:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 336937500
+  - 138100000
+SW47:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 339318750
+  - 147600000
+SW48:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 138100000
+SW49:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 82143750
+  - 157150000
+SW5:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 132150000
+  - 100000000
+SW50:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 108337500
+  - 157150000
+SW51:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 127387500
+  - 157150000
+SW52:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 146437500
+  - 157150000
+SW53:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 165487500
+  - 157150000
+SW54:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 184537500
+  - 157150000
+SW55:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 203587500
+  - 157150000
+SW56:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 222637500
+  - 157150000
+SW57:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 241687500
+  - 157150000
+SW58:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 260737500
+  - 157150000
+SW59:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 279787500
+  - 157150000
+SW6:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 151200000
+  - 100000000
+SW60:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 298837500
+  - 157150000
+SW61:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 317887500
+  - 157150000
+SW62:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 329793750
+  - 157150000
+SW63:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 157150000
+SW64:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 77381250
+  - 176200000
+SW65:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 86906250
+  - 176200000
+SW66:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 98812500
+  - 176200000
+SW67:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 117862500
+  - 176200000
+SW68:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 136912500
+  - 176200000
+SW69:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 155962500
+  - 176200000
+SW7:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 170250000
+  - 100000000
+SW70:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 175012500
+  - 176200000
+SW71:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 194062500
+  - 176200000
+SW72:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 213112500
+  - 176200000
+SW73:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 232162500
+  - 176200000
+SW74:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 251212500
+  - 176200000
+SW75:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 270262500
+  - 176200000
+SW76:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 289312500
+  - 176200000
+SW77:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 315506250
+  - 176200000
+SW78:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 341700000
+  - 176200000
+SW79:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 176200000
+SW8:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 189300000
+  - 100000000
+SW80:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 77381250
+  - 195250000
+SW81:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 101193750
+  - 195250000
+SW82:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 125006250
+  - 195250000
+SW83:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 196443750
+  - 195250000
+SW84:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 265500000
+  - 195250000
+SW85:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 270262500
+  - 195250000
+SW86:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 284550000
+  - 195250000
+SW87:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 298837500
+  - 195250000
+SW88:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 303600000
+  - 195250000
+SW89:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 322650000
+  - 195250000
+SW9:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 208350000
+  - 100000000
+SW90:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 341700000
+  - 195250000
+SW91:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 360750000
+  - 195250000
+U1:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 91186000
+  - 53403500
+U2:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 158305500
+  - 204025500
+U3:
+  flipped: true
+  orientation: 1800.0
+  position:
+  - 171704000
+  - 199009000
+U4:
+  flipped: true
+  orientation: 2700.0
+  position:
+  - 67754500
+  - 204025500
+U5:
+  flipped: true
+  orientation: 2700.0
+  position:
+  - 66611500
+  - 112839500
+X1:
+  flipped: true
+  orientation: 2700.0
+  position:
+  - 181165500
+  - 193675000
+
