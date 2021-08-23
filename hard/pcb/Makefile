@@ -25,6 +25,7 @@ UNITS := $(UNITS_PCB)
 PCB := $(BUILD_DIR)/kbd75mock_v2.kicad_pcb
 PLACED_PCB := $(BUILD_DIR)/kbd75mock_v2_placed.kicad_pcb
 PLACEMENT := $(SRC_DIR)/placement.yaml
+ROUTED_PCB := $(BUILD_DIR)/kbd75mock_v2_routed.kicad_pcb
 
 # Rules
 .PRECIOUS: $(UNITS_NETS) $(NETLIST)
@@ -41,10 +42,19 @@ pcb: $(PCB)
 
 place: $(PLACED_PCB)
 
+route: $(ROUTED_PCB)
+
 netlist: $(NETLIST)
 
 update_placement: $(PLACEMENT)
-	$(PCB_EXPLORER) dump $(PLACED_PCB) > $(PLACEMENT)
+	$(PCB_EXPLORER) dump $(ROUTED_PCB) > $(PLACEMENT)
+
+
+$(ROUTED_PCB): $(PLACED_PCB)
+	@echo building $@ from $<
+	( export PYTHONPATH=$(PYTHONPATH) && \
+	  python3 $(SRC_DIR)/route.py $< $@ )
+
 
 $(PLACED_PCB): $(PCB) $(PLACEMENT)
 	@echo building $@ from $<
