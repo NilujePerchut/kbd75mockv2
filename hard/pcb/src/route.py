@@ -6,6 +6,13 @@ import argparse
 from pcbnew import FromMM, FromMils
 
 from route_utils import get_layer_table
+from route_utils import get_pad_by_name
+from route_utils import route_2_pads
+from src.kle_parser import KeebLayout
+from src.place import create_assoc_map
+
+
+KLE_JSON_FILE = "rcs/v2.json"
 
 SHEET_LEN = FromMM(410)
 SHEET_HIGHT = FromMM(210)
@@ -124,11 +131,30 @@ def draw_edge_cut(pcb):
     _draw_tracks_from_outline(pcb, outline, edgecuts_layer)
 
 
+def route_diode_anode(pcb, am):
+    """Route the diode anode to switch pin1"""
+    for label, assoc in am.items():
+        switch = assoc["switch"]
+        diode = assoc["diode"]
+        if (switch is None) or (diode is None):
+            continue
+        switch_pin1 = get_pad_by_name(switch, "1")
+        diode_anode = get_pad_by_name(diode, "2")
+        layer = get_layer_table(pcb)["B.Cu"]
+        route_2_pads(pcb, switch_pin1, diode_anode, layer)
+
+
 def route(unrouted, routed):
     """Routes the (hopefuly) most of the pcb"""
+    # Open the PCB and create the layout
     pcb = pcbnew.LoadBoard(unrouted)
+    kl = KeebLayout(KLE_JSON_FILE)
+    kl.parse()
+
+    am, bl = create_assoc_map(kl, pcb)
     setup_pcb_options(pcb, JLCPCB_CAPABILITIES)
     draw_edge_cut(pcb)
+    route_diode_anode(pcb, am)
     pcb.Save(routed)
 
 
