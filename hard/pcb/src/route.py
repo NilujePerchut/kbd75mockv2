@@ -8,6 +8,7 @@ from pcbnew import FromMM, FromMils
 from route_utils import get_layer_table
 from route_utils import get_pad_by_name
 from route_utils import route_2_pads
+from route_utils import get_net_by_name
 from src.kle_parser import KeebLayout
 from src.place import create_assoc_map
 
@@ -144,6 +145,44 @@ def route_diode_anode(pcb, am):
         route_2_pads(pcb, switch_pin1, diode_anode, layer)
 
 
+def _build_zone_from_hull(pcb, hull, net, layer):
+    """Creates a zone from the given hull"""
+    z = pcbnew.ZONE_CONTAINER(pcb)
+
+    # Add zone properties
+    z.SetLayer(layer)
+    z.SetNetCode(net.GetNet())
+    z.SetPadConnection(pcbnew.PAD_ZONE_CONN_THERMAL)
+    z.SetMinThickness(25400)  # The minimum
+    z.SetIsFilled(True)
+    z.SetPriority(50)
+    ol = z.Outline()
+    ol.NewOutline()
+
+    outline = hull.Outline(0)
+    points = [outline.CPoint(i).getWxPoint()
+              for i in range(outline.PointCount())]
+    points = [point for point in points if _is_inside_sheet(point)]
+
+    for p in points:
+        ol.Append(p.x, p.y)
+    pcb.Add(z)
+
+    # Redraw zones
+    filler = pcbnew.ZONE_FILLER(pcb)
+    filler.Fill(pcb.Zones())
+
+
+def place_planes(pcb):
+    """Create GND and 5V planes"""
+    hull =  _get_module_boudingpoly(pcb, switches=True)
+
+    for netname, layername in [("GND", "F.Cu"), ("V5V", "B.Cu")]:
+        net = get_net_by_name(pcb, netname)
+        layer = get_layer_table(pcb)[layername]
+        _build_zone_from_hull(pcb, hull, net, layer)
+
+
 def route(unrouted, routed):
     """Routes the (hopefuly) most of the pcb"""
     # Open the PCB and create the layout
@@ -155,6 +194,7 @@ def route(unrouted, routed):
     setup_pcb_options(pcb, JLCPCB_CAPABILITIES)
     draw_edge_cut(pcb)
     route_diode_anode(pcb, am)
+    place_planes(pcb)
     pcb.Save(routed)
 
 
