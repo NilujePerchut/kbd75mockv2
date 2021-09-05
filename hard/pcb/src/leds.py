@@ -45,7 +45,7 @@ def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
         inst_led["VDD"] += power["v5v"]
         inst_led["VSS"] += power["gnd"]
         inst_led["DIN"] += current_command
-        current_command = Net()
+        current_command = Net(F"LED_RGB_{key.label}")
         inst_led["DOUT"] += current_command
 
     if returns:

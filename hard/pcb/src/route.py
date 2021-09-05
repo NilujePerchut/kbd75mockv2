@@ -211,9 +211,54 @@ def set_leds_gnd_vias(pcb, am, bl):
                 via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(1.5))
             else:
                 via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(1.5))
-        
+
         route_2_pads(pcb, pad, create_via(pcb, net, via1_pos), layer)
         route_2_pads(pcb, pad, create_via(pcb, net, via2_pos), layer)
+
+
+def __route_led_chain(pcb, pad1, pad2, net_name):
+    """Route the led chain"""
+    # Route 1/3 of length on each side (B.Cu)
+    # Place VIA at the end of these track
+    # Bridge both vias on F.Cu
+    net = get_net_by_name(pcb, net_name)
+    if pad1.GetPosition().x < pad2.GetPosition().x:
+        pads = [pad1, pad2]
+    else:
+        pads = [pad2, pad1]
+
+    pad1_pos = pads[0].GetPosition()
+    pad2_pos = pads[1].GetPosition()
+    bcu_hlength = int(abs(pad1_pos.x - pad2_pos.x) / 3)
+    via1_pos = wxPoint(pad1_pos.x + bcu_hlength, pad1_pos.y)
+    via2_pos = wxPoint(pad2_pos.x - bcu_hlength, pad2_pos.y)
+    via1 = create_via(pcb, net, via1_pos)
+    via2 = create_via(pcb, net, via2_pos)
+    route_2_pads(pcb, pads[0], via1, get_layer_table(pcb)["B.Cu"])
+    route_2_pads(pcb, pads[1], via2, get_layer_table(pcb)["B.Cu"])
+    route_2_pads(pcb, via1, via2, get_layer_table(pcb)["F.Cu"])
+
+
+def link_leds(pcb, am, bl):
+    """Links the leds"""
+    # Did not find an easy way to get pads connected to a net
+    # So, just build up a list of all pads DIN, DOUT of all LEDs,
+    # then make pairs
+    themap = {}
+    pk = [assoc["led"] for l, assoc in am.items() if assoc["led"]]
+    bk = [bl[label] for label in bl]
+    for led in pk + bk:
+        for padnum in ["2", "4"]:
+            pad = get_pad_by_name(led, padnum)
+            netname = pad.GetNetname()
+            if netname not in themap:
+                themap[netname] = []
+            themap[netname].append(pad)
+
+    for name, pads in themap.items():
+        if len(pads) != 2:
+            continue
+        __route_led_chain(pcb, pads[0], pads[1], name)
 
 
 def route(unrouted, routed):
@@ -229,6 +274,7 @@ def route(unrouted, routed):
     route_diode_anode(pcb, am)
     place_planes(pcb)
     set_leds_gnd_vias(pcb, am, bl)
+    link_leds(pcb, am, bl)
     pcb.Save(routed)
 
 
