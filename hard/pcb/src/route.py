@@ -3,12 +3,13 @@
 
 import pcbnew
 import argparse
-from pcbnew import FromMM, FromMils
+from pcbnew import FromMM, FromMils, wxPoint
 
 from route_utils import get_layer_table
 from route_utils import get_pad_by_name
 from route_utils import route_2_pads
 from route_utils import get_net_by_name
+from route_utils import create_via
 from src.kle_parser import KeebLayout
 from src.place import create_assoc_map
 
@@ -183,6 +184,38 @@ def place_planes(pcb):
         _build_zone_from_hull(pcb, hull, net, layer)
 
 
+def set_leds_gnd_vias(pcb, am, bl):
+    """Set vias on each per-key led's GND pin"""
+    net = get_net_by_name(pcb, "GND")
+    layer = get_layer_table(pcb)["B.Cu"]
+
+    pk = [assoc["led"] for l, assoc in am.items() if assoc["led"]]
+    bk = [bl[label] for label in bl]
+    for led in pk + bk:
+        lib_name = str(led.GetFPID().GetLibItemName())
+        backlight = "PLCC4" in lib_name
+        orientation = led.GetOrientation()
+        pad = get_pad_by_name(led, "3")
+        pad_pos = pad.GetPosition()
+
+        if orientation == 0.0:
+            via1_pos = wxPoint(pad_pos.x + FromMM(2), pad_pos.y)
+            if backlight:
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(1.5))
+            else:
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(1.5))
+
+        else:
+            via1_pos = wxPoint(pad_pos.x - FromMM(2), pad_pos.y)
+            if backlight:
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(1.5))
+            else:
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(1.5))
+        
+        route_2_pads(pcb, pad, create_via(pcb, net, via1_pos), layer)
+        route_2_pads(pcb, pad, create_via(pcb, net, via2_pos), layer)
+
+
 def route(unrouted, routed):
     """Routes the (hopefuly) most of the pcb"""
     # Open the PCB and create the layout
@@ -195,6 +228,7 @@ def route(unrouted, routed):
     draw_edge_cut(pcb)
     route_diode_anode(pcb, am)
     place_planes(pcb)
+    set_leds_gnd_vias(pcb, am, bl)
     pcb.Save(routed)
 
 
