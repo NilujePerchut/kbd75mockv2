@@ -275,6 +275,9 @@ def route(unrouted, routed):
     place_planes(pcb)
     set_leds_gnd_vias(pcb, am, bl)
     link_leds(pcb, am, bl)
+    # Rebuild zones
+    filler = pcbnew.ZONE_FILLER(pcb)
+    filler.Fill(pcb.Zones())
     pcb.Save(routed)
 
 
