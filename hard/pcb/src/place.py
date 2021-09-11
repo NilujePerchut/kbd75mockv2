@@ -147,6 +147,18 @@ def place_fixes(pcb):
         f.SetPosition(wxPoint(posx, posy))
 
 
+def place_case(pcb):
+    """Place the case"""
+    for module in pcb.GetModules():
+        lib_name = str(module.GetFPID().GetLibItemName())
+        if lib_name == "YMDK_case":
+            posx = TOP_LEFT[0] + (5.5*U1) - FromMils(100)
+            posy = TOP_LEFT[1] + FromMils(200)
+            module.SetPosition(wxPoint(posx, posy))
+            return
+    assert False, "YMDK_case not found"
+
+
 def place(unplaced, placed, layout):
     """Place every stuff"""
     pcb = pcbnew.LoadBoard(unplaced)
@@ -157,6 +169,7 @@ def place(unplaced, placed, layout):
         place_diode(label, assoc)
     place_backlight(bl)
     place_fixes(pcb)
+    place_case(pcb)
 
     pcbnew.SaveBoard(placed, pcb)
 
