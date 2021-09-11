@@ -54,6 +54,18 @@ JLCPCB_CAPABILITIES = {
 }
 
 
+POWER_NET_CLASS = {
+    "Clearance": FromMils(10),
+    "TrackWidth": FromMils(30),
+    "ViaDiameter": FromMils(27),
+    "ViaDrill": FromMils(13),
+    "uViaDiameter": FromMils(27),
+    "uViaDrill": FromMils(13),
+    "DiffPairWidth": FromMM(0.229),
+    "DiffPairGap": FromMM(0.154),
+}
+
+
 def _get_module_boudingpoly(pcb, switches=False, usb_conn=False):
     """Return the outline of all the selected modules"""
     modules = []
@@ -114,6 +126,7 @@ def setup_pcb_options(pcb, profile):
     design_settings.m_ViasMinSize = profile["ViasMinSize"]
     design_settings.m_ViasMinDrill = profile["ViasMinDrill"]
 
+    # Default class (signals)
     default_class = design_settings.GetDefault()
     default_class.SetClearance(profile["Clearance"])
     default_class.SetTrackWidth(profile["TrackWidth"])
@@ -123,6 +136,26 @@ def setup_pcb_options(pcb, profile):
     default_class.SetuViaDrill(profile["ViaDrill"])
     default_class.SetDiffPairWidth(profile["DiffPairWidth"])
     default_class.SetDiffPairGap(profile["DiffPairGap"])
+
+    # Power class (V5V, V33, GND)
+    power_class = pcbnew.NETCLASSPTR("Power")
+    power_class.SetClearance(POWER_NET_CLASS["Clearance"])
+    power_class.SetTrackWidth(POWER_NET_CLASS["TrackWidth"])
+    power_class.SetViaDiameter(POWER_NET_CLASS["ViaDiameter"])
+    power_class.SetViaDrill(POWER_NET_CLASS["ViaDrill"])
+    power_class.SetuViaDiameter(POWER_NET_CLASS["uViaDiameter"])
+    power_class.SetuViaDrill(POWER_NET_CLASS["ViaDrill"])
+    power_class.SetDiffPairWidth(POWER_NET_CLASS["DiffPairWidth"])
+    power_class.SetDiffPairGap(POWER_NET_CLASS["DiffPairGap"])
+    net_classes = design_settings.m_NetClasses
+    net_names = power_class.NetNames()
+    for net_name in ["VBUS", "V5V", "V33", "GND"]:
+        net_names.append(net_name)
+    net_classes.Add(power_class)
+
+    pcb.SetDesignSettings(design_settings)
+    # Call to BuildListOfNets id mandatory to populate new netclass members
+    pcb.BuildListOfNets()
 
 
 def draw_edge_cut(pcb):
