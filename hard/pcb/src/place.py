@@ -53,6 +53,8 @@ def place_key(label, assoc):
     posx = TOP_LEFT[0]+key.pcb_pos_x*U1 + adjx*U1
     posy = TOP_LEFT[1]+key.pcb_pos_y*U1 + adjy
     module.SetPosition(wxPoint(posx, posy))
+    # Set Value not visible
+    module.Value().SetVisible(False)
     # Also place a label with the key name
     text = pcbnew.TEXTE_MODULE(module)
     pos = module.GetPosition()
