@@ -1,9 +1,9 @@
 C1:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 1800.0
   position:
-  - 126428500
-  - 54102000
+  - 78220000
+  - 102990000
 C10:
   flipped: true
   orientation: 900.0
@@ -65,11 +65,11 @@ C19:
   - 53416200
   - 142684500
 C2:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 1800.0
   position:
-  - 132334000
-  - 53975000
+  - 65960000
+  - 99740000
 C20:
   flipped: false
   orientation: 0.0
@@ -131,11 +131,11 @@ C29:
   - 58331100
   - 104838500
 C3:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 1800.0
   position:
-  - 138518900
-  - 53911500
+  - 65850000
+  - 97630000
 C30:
   flipped: false
   orientation: 0.0
@@ -192,10 +192,10 @@ C7:
   - 124523500
 C8:
   flipped: true
-  orientation: 900.0
+  orientation: 0.0
   position:
-  - 178689000
-  - 201041000
+  - 180975000
+  - 200406000
 C9:
   flipped: true
   orientation: 1800.0
@@ -816,10 +816,10 @@ D190:
   - 190700000
 D2:
   flipped: true
-  orientation: 900.0
+  orientation: 0.0
   position:
-  - 77500000
-  - 101450000
+  - 71440000
+  - 99990000
 D20:
   flipped: true
   orientation: 900.0
@@ -1445,23 +1445,23 @@ J1:
   - 81440000
   - 96810000
 L1:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 1800.0
   position:
-  - 105092500
-  - 54356000
+  - 73440000
+  - 97330000
 P1:
   flipped: false
   orientation: 0.0
   position:
-  - 79184500
-  - 54356000
+  - 77840000
+  - 109090000
 P2:
   flipped: true
-  orientation: 2700.0
+  orientation: 0.0
   position:
-  - 183642000
-  - 199326500
+  - 148793200
+  - 206705200
 P3:
   flipped: true
   orientation: 900.0
@@ -1469,17 +1469,17 @@ P3:
   - 69913500
   - 112903000
 R1:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 900.0
   position:
-  - 121031000
-  - 54038500
+  - 89440000
+  - 99460000
 R2:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 900.0
   position:
-  - 117411500
-  - 54038500
+  - 87760000
+  - 99460000
 R3:
   flipped: true
   orientation: 900.0
@@ -1528,6 +1528,12 @@ S1:
   position:
   - 217360500
   - 199072500
+S2:
+  flipped: false
+  orientation: 0.0
+  position:
+  - 177235000
+  - 105080000
 SW1:
   flipped: true
   orientation: 1800.0
@@ -2075,17 +2081,17 @@ SW91:
   - 360750000
   - 195250000
 U1:
-  flipped: false
-  orientation: 0.0
+  flipped: true
+  orientation: 2700.0
   position:
-  - 91186000
-  - 53403500
+  - 80660000
+  - 103890000
 U2:
   flipped: true
   orientation: 1800.0
   position:
-  - 158305500
-  - 204025500
+  - 134569200
+  - 204622400
 U3:
   flipped: true
   orientation: 1800.0
