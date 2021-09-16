@@ -251,9 +251,9 @@ def set_leds_gnd_vias(pcb, am, bl):
         route_2_pads(pcb, pad, create_via(pcb, net, via2_pos), layer)
 
 
-def __route_led_chain(pcb, pad1, pad2, net_name):
+def __route_led_chain(pcb, pad1, pad2, net_name, reverse=False):
     """Route the led chain"""
-    # Route 1/3 of length on each side (B.Cu)
+    # Route 1/4, 3/4 of length on each side (B.Cu)
     # Place VIA at the end of these track
     # Bridge both vias on F.Cu
     net = get_net_by_name(pcb, net_name)
@@ -264,9 +264,16 @@ def __route_led_chain(pcb, pad1, pad2, net_name):
 
     pad1_pos = pads[0].GetPosition()
     pad2_pos = pads[1].GetPosition()
-    bcu_hlength = int(abs(pad1_pos.x - pad2_pos.x) / 3)
-    via1_pos = wxPoint(pad1_pos.x + bcu_hlength, pad1_pos.y)
-    via2_pos = wxPoint(pad2_pos.x - bcu_hlength, pad2_pos.y)
+    bcu_hlength_short = int(abs(pad1_pos.x - pad2_pos.x) / 4)
+    bcu_hlength_long = int(3 * abs(pad1_pos.x - pad2_pos.x) / 4)
+    if reverse:
+        length1 = bcu_hlength_long
+        length2 = bcu_hlength_short
+    else:
+        length1 = bcu_hlength_short
+        length2 = bcu_hlength_long
+    via1_pos = wxPoint(pad1_pos.x + length1, pad1_pos.y)
+    via2_pos = wxPoint(pad2_pos.x - length2, pad2_pos.y)
     via1 = create_via(pcb, net, via1_pos)
     via2 = create_via(pcb, net, via2_pos)
     route_2_pads(pcb, pads[0], via1, get_layer_table(pcb)["B.Cu"])
@@ -288,12 +295,14 @@ def link_leds(pcb, am, bl):
             netname = pad.GetNetname()
             if netname not in themap:
                 themap[netname] = []
-            themap[netname].append(pad)
+            themap[netname].insert(0, pad)
+
+        themap[netname].append(led.GetOrientation() == 0)
 
     for name, pads in themap.items():
-        if len(pads) != 2:
+        if len(pads) != 3:
             continue
-        __route_led_chain(pcb, pads[0], pads[1], name)
+        __route_led_chain(pcb, pads[0], pads[1], name, reverse=pads[2])
 
 
 def route(unrouted, routed):
