@@ -219,6 +219,8 @@ def place_planes(pcb):
 
 def set_leds_gnd_vias(pcb, am, bl):
     """Set vias on each per-key led's GND pin"""
+    VIA_X_DIST = 1.5
+    VIA_Y_DIST = 1
     net = get_net_by_name(pcb, "GND")
     layer = get_layer_table(pcb)["B.Cu"]
 
@@ -232,18 +234,18 @@ def set_leds_gnd_vias(pcb, am, bl):
         pad_pos = pad.GetPosition()
 
         if orientation == 0.0:
-            via1_pos = wxPoint(pad_pos.x + FromMM(2), pad_pos.y)
+            via1_pos = wxPoint(pad_pos.x + FromMM(VIA_X_DIST), pad_pos.y)
             if backlight:
-                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(1.5))
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(VIA_Y_DIST))
             else:
-                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(1.5))
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(VIA_Y_DIST))
 
         else:
-            via1_pos = wxPoint(pad_pos.x - FromMM(2), pad_pos.y)
+            via1_pos = wxPoint(pad_pos.x - FromMM(VIA_X_DIST), pad_pos.y)
             if backlight:
-                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(1.5))
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y + FromMM(VIA_Y_DIST))
             else:
-                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(1.5))
+                via2_pos = wxPoint(pad_pos.x, pad_pos.y - FromMM(VIA_Y_DIST))
 
         route_2_pads(pcb, pad, create_via(pcb, net, via1_pos), layer)
         route_2_pads(pcb, pad, create_via(pcb, net, via2_pos), layer)
