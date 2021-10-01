@@ -57,8 +57,8 @@ JLCPCB_CAPABILITIES = {
 POWER_NET_CLASS = {
     "Clearance": FromMils(10),
     "TrackWidth": FromMils(30),
-    "ViaDiameter": FromMils(27),
-    "ViaDrill": FromMils(13),
+    "ViaDiameter": FromMils(45),
+    "ViaDrill": FromMils(20),
     "uViaDiameter": FromMils(27),
     "uViaDrill": FromMils(13),
     "DiffPairWidth": FromMM(0.229),
