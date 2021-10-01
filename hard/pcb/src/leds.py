@@ -36,11 +36,13 @@ def per_key_leds(power, command, keys_by_led_iterator, backlight=False,
             bypass_cap(power["v5v"], power["gnd"], ["100nF"],
                        fields={"descr": "leds", "JLCC": "C14663"})
         if backlight:
-            package = "LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+            package = "LED_WS2812C_PLCC4_5.0x5.0mm_P3.2mm"
+            fields = {"JLCC": "C2761796", "JLROT": "0"}
         else:
             package = "SK6812-MINI-E"
-        inst_led = dop_part("WS2812B", package, value=key.label,
-                            fields = {"descr": F"LED_{key.label}"})
+            fields = {}
+        fields["descr"] = F"LED_{key.label}"
+        inst_led = dop_part("WS2812B", package, value=key.label, fields=fields)
 
         inst_led["VDD"] += power["v5v"]
         inst_led["VSS"] += power["gnd"]
