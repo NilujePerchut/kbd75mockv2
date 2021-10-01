@@ -12,6 +12,10 @@ PYTHONPATH := $(NILUJE_KICAD_LIBS):$(CURDIR)
 
 # Tools
 PCB_EXPLORER := $(NILUJE_KICAD_LIBS)/pcb_explorer.py
+JLCPCB_ASSEMBLY_GEN := $(NILUJE_KICAD_LIBS)/jlcpcb.py
+
+# Fab files
+FAB_DIR := $(BUILD_DIR)/fab
 
 # Unit tests
 UNITS_SRC := $(wildcard $(UNITS_DIR)/*.py)
@@ -26,10 +30,12 @@ PCB := $(BUILD_DIR)/kbd75mock_v2.kicad_pcb
 PLACED_PCB := $(BUILD_DIR)/kbd75mock_v2_placed.kicad_pcb
 PLACEMENT := $(SRC_DIR)/placement.yaml
 ROUTED_PCB := $(BUILD_DIR)/kbd75mock_v2_routed.kicad_pcb
+ASSEMBLY_XML := $(BUILD_DIR)/kbd75mock_v2.xml
+ASSEMBLY_POS := $(BUILD_DIR)/kbd75mock_v2-pos.csv
 
 # Rules
 .PRECIOUS: $(UNITS_NETS) $(NETLIST)
-.PHONY: update_placement
+.PHONY: update_placement jlcpcb_assembly
 
 all: $(UNITS) $(PCB)
 
@@ -48,6 +54,14 @@ netlist: $(NETLIST)
 
 update_placement: $(PLACEMENT)
 	$(PCB_EXPLORER) dump $(ROUTED_PCB) > $(PLACEMENT)
+
+
+# Generates JLCPCB assembly files
+# Assuming gerbers, pos and xml files are generated
+jlcpcb_assembly: $(ASSEMBLY_XML) $(ASSEMBLY_POS)
+	@echo Generating JLCPCB assembly files
+	python3 $(JLCPCB_ASSEMBLY_GEN) --bottom_only -o $(FAB_DIR) kbd75mock_v2 $(ASSEMBLY_XML) $(ASSEMBLY_POS)
+	zip -r $(FAB_DIR)/gerbers.zip $(FAB_DIR)/gerbers
 
 
 $(ROUTED_PCB): $(PLACED_PCB)
