@@ -4,30 +4,68 @@
 - [X] Add a SIL4 for external USB connection
 - [ ] Add GPLV3 header on each files
 - [X] Add Licence file
+- [ ] Use git submodule for kicad_libs
 
-
-* Netlist [5/5]
+* Netlist [10/10]
 - [X] Generate a JSON file with unique keys and a duplicate dict
 - [X] Add some capas (tank+100nF) capas
 - [X] Switch backlight LED to 5050 format
 - [X] Add passive component value to netlist
 - [X] Re-think the external USB connection
-
+- [X] Invert USB-P and USB-N on usb filter + SIL4
+- [X] Add 3d models for each footprint (not needed)
+- [X] Re-attribute cols and rows
+    |-----+-----------------------+-----------------------+---------|
+    | Pin | Original Net          | New Net               | New Pin |
+    |-----+-----------------------+-----------------------+---------|
+    |  13 |                       | COL_7                 | PA3     |
+    |  14 |                       | COL_8                 | PA4     |
+    |  15 |                       | COL_10                | PA5     |
+    |  16 |                       | COL_9                 | PA6     |
+    |  26 | COL_0                 | ROW_5                 | PB13    |
+    |  27 | COL_1                 | COL_0                 | PB14    |
+    |  28 | COL_2                 | COL_1                 | PB15    |
+    |  29 | COL_3                 | COL_3 (idem)          | PA8     |
+    |  31 | COL_4                 | COL_2                 | PA10    |
+    |  18 | COL_5                 | COL_12                | PB0     |
+    |  17 | COL_6                 | COL_11                | PA7     |
+    |  38 | COL_7                 |                       |         |
+    |  39 | COL_8                 |                       |         |
+    |  40 | COL_9                 | BACKLIGHT_LED_COMMAND | PB4     |
+    |  41 | COL_10                | CAPS_LOCS_LED_CMD     | PB5     |
+    |  43 | COL_11                | ROW_3                 | PB7     |
+    |  45 | COL_12                | ROW_2                 | PB8     |
+    |  46 | COL_13                | COL_5                 | PB9     |
+    |  11 | COL_14                | ROW_1                 | PA1     |
+    |  42 | ROW_0                 |                       |         |
+    |  30 | ROW_1                 | COL_4                 | PA9     |
+    |  25 | ROW_2                 | PER_KEY_LED_CMD       | PB12    |
+    |  22 | ROW_3                 |                       |         |
+    |  21 | ROW_4                 | COL_14                | PB10    |
+    |  19 | ROW_5                 | COL_13                | PB1     |
+    |   2 | CAPS_LOCK_LED_CMD     | ROW_4                 | PC13    |
+    |  10 | PER_KEY_LED_CMD       | ROW_0                 | PA0     |
+    |  12 | BACKLIGHT_LED_COMMAND | COL_6                 | PA2     |
+    |-----+-----------------------+-----------------------+---------|
+- [X] Check inductor JLCPCB ref
+- [X] Add backlight leds JLCPCB package
 
 * PCB
-** Key modules modifications [2/2]
+** Key modules modifications [3/3]
 - [X] Invert Space key stabs holes
 - [X] Add mechanics
   - [X] Screw holes
   - [X] JLCPCB fiducials
   - [X] JLCPCB tooling holes
   - [X] SAKURA
-- [ ] Adjust Screw holes
+- [X] Adjust Screw holes
 
-** Footprints [1/1]
+** Footprints [3/3]
 - [X] decal backslash_ainsi switch pcb hole to allow soldering
+- [X] Enlarge Sakura Mask
+- [X] Use Sakara Mask on bottom too => Cancel
 
-** Placement [5/7]
+** Placement [10/10]
 - [X] Place all key switch footprint using the data
 - [X] Gather switch, LED, capa, diode in one python structure to ease the data retrival
 - [X] Per key LEDs
@@ -35,17 +73,41 @@
   - [X] Only use one LED for both AltGr and RightCtrl
   - [X] Adjust designator (rotation, avoid hole)
 - [X] Place LED (backlight)
-- [?] Place LED capa (no one capa per led but just a bunch of capa)
+- [X] Place LED capa (no one capa per led but just a bunch of capa) => No capa
 - [X] Place key diode
-- [ ] Place the USB connector
-- [ ] Place the STM32
+- [X] Place the USB connector
+- [X] Place the STM32
+- [X] Set Switches values not visible
+- [X] Check the usb c connector location against the actual case
 
-** Routing [0/1]
-- [ ] Creates signal classes
- - [ ] Setup trace widths
-- [ ] Creates outline
+** Routing [5/5]
+- [X] Creates signal classes
+  - [X] Setup trace widths
+- [X] Creates outline
+- [X] Add plate outline (no need)
+- [X] Add case dimensions (to place USB connector correctly)
+- [X] Use correct power track width to allow routing in small space
+
+** Manfucturing [5/5]
+- [X] Generate BOM
+- [X] Generate Gerbers
+- [X] Generate Drill Files (Excellon + Drill map)
+- [X] Generate Assembly file
+- [X] Generate JLCPCB placement file
 
 ** MISC
-- [?] Set the PCB to 4 layers (compare with Doppleganger PCB)
+- [X] Set the PCB to 4 layers (compare with Doppleganger PCB) => Not needed, Thanks to Tor-Rolf
 - [X] Set the pcb size to A3
-- [ ] Ajouter les info de cartouche
+- [X] Adds Copyrights on Top Silks (spacebar right part)
+
+
+* Software
+** Minimal ISO keyboard [0/1]
+- [ ] Use git submodule for qmk firmware
+- [ ] Create new keyboard
+- [ ] Create niluje-iso keymap
+** Implements layers
+** Add AINSI keymap
+** Add VIA support
+** Add Perkey backlight
+** Add backlight
