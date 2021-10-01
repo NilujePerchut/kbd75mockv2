@@ -7,13 +7,13 @@ from sch_utils import dop_part, bypass_cap, get_res, pull_updown
 from sch_utils import get_capa
 
 
-LAYOUT_COLS = ["PB13", "PB14",  "PB15", "PA8",  "PA10", "PB0", "PA7", "PA15",
-               "PB3",  "PB4",  "PB5", "PB7", "PB8", "PB9", "PA1"]
-LAYOUT_ROWS = ["PB6", "PA9", "PB12", "PB11", "PB10", "PB1"]
-PER_KEY_LEDS_COMMAND = "PA0"
-BACKLIGHT_LEDS_COMMAND = "PA2"
+LAYOUT_COLS = ["PB14", "PB15", "PA10", "PA8", "PA9", "PB9", "PA2", "PA3",
+               "PA4", "PA6", "PA5", "PA7", "PB0", "PB1", "PB10"]
+LAYOUT_ROWS = ["PA0", "PA1", "PB8", "PB7", "PC13", "PB13"]
+PER_KEY_LEDS_COMMAND = "PB12"
+BACKLIGHT_LEDS_COMMAND = "PB4"
 
-UNCONNECTED = ["PA3", "PA4", "PA5", "PA6", "PC14", "PC15"]
+UNCONNECTED = ["PA15", "PB3", "PB6", "PB11", "PC14", "PC15"]
 
 def stm32(power, usb):
     """The STM32 part"""
@@ -71,10 +71,10 @@ def stm32(power, usb):
     bypass_cap(power["v33"], power["gnd"], "100nF",
                fields={"descr": "oscillator", "JLCC": "C14663"})
 
-    # Std LED on PC13 (3mA max => lets go for 1.4mA) 
+    # LED 
     led = dop_part("LED", "0805LED")
     res = get_res("1.4K", "0603", fields={"JLCC": "C22843"})
-    stm32["PC13"] & res & led["A,K"] & power["gnd"]
+    stm32["PB5"] & res & led["A,K"] & power["gnd"]
 
     cols = []
     for i, stm32_col_pin in enumerate(LAYOUT_COLS):
