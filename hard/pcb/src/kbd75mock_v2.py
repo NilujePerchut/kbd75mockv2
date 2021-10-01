@@ -39,7 +39,7 @@ def main():
                    alternate_command=command)
 
     # Decoupling 3 100nf per row, 1 10uF tank per row
-    bypass_cap(power["v33"], power["gnd"], ["100nF"]*kl.nb_row*3,
+    bypass_cap(power["v5v"], power["gnd"], ["100nF"]*kl.nb_row*3,
                fields={"descr": "main_decoupling", "JLCC": "C14663"})
     bypass_cap(power["v5v"], power["gnd"], ["4.7uF"]*kl.nb_row, package="0805",
                fields={"descr": "main_decoupling", "JLCC": "C1779"})
