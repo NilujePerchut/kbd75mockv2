@@ -31,10 +31,10 @@ def usb_iface():
                                   "JLROT": "180"})
 
     ferrite = get_inductance("MPZ1608B471ATA00", "0603",
-                             fields={"Reference": "MPZ1608B471ATA00",
-                                     "descr": "Ferrite 470Ω @ 100MHz 1A",
+                             fields={"Reference": "MPZ1608B601ATD25",
+                                     "descr": "Ferrite 600Ω @ 100MHz 1A",
                                      "CC": "",
-                                     "JLCC": "2800840", "JLROT": "0"})
+                                     "JLCC": "C193536", "JLROT": "0"})
 
     # USB + its ESD protection
     # For external USB connection, a sil 4 connector is provided
