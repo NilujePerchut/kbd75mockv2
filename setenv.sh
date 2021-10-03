@@ -1,20 +1,9 @@
 #!/usr/bin/zsh
 
-# Just a script to ensure portability over osdemammouth and osdegirouette
-# For other platform, just define the env variables before calling the script
+# Just define some usefull paths and env vars
 
 printf "Setting up the environnement\n"
 
-host=`hostname`
+export NILUJE_KICAD_LIBS=$(realpath kicad_libs)
 
-if [ "$host" = "osdemammouth" ] ; then
-	printf "osdemammouth detected\n"
-	export NILUJE_KICAD_LIBS=/home/niluje/Work_local/kicad_libs
-elif [ "$host" = "osdegirouette" ] ; then
-	printf "osdegirouette detected\n"
-	export NILUJE_KICAD_LIBS=/home/niluje/Work/kicad_libs
-else
-	printf "Unknown host. Using existing env variables"
-fi
-
-printf "NILUJE_KICAD_LIBS: %s\n" $NILUJE_KICAD_LIBS 
+printf "NILUJE_KICAD_LIBS: %s\n" $NILUJE_KICAD_LIBS
