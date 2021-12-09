@@ -1,3 +1,6 @@
 [submodule "kicad_libs"]
 	path = kicad_libs
 	url = https://www.github.com/NilujePerchut/kicad_libs
+[submodule "qmk_firmware"]
+	path = qmk_firmware
+	url = https://www.github.com/NilujePerchut/qmk_firmware.git
