@@ -1,0 +1,67 @@
+#+TITLE: KBD75mockV2 validation
+
+* Mechanical
+** Backlight LED placement
+*** Top row [1/1]
+- [X] Placement is ok (more or less)
+
+*** Bottom row [/]
+Starting from USB side: 4, 6, 7 are miss-placed
+- [ ] 4 is one LED too far on rigth (bottom view)
+- [ ] 6 is 1/2 LED too far on right (bottom view)
+- [ ] 7 is one LED too far on rigth (bottom view)
+** Per-key LED [1/1]
+- [X] Hole size: OK
+** Mounting screws [0/0]
+*** Top row [1/1]
+- [X] Placement
+*** Third row [1/3]
+- [ ] First is 2mm too much on left
+- [ ] 2 & 3 missing for kbd75v2 case
+- [X] Fourth is OK
+*** Third and a half row [0/1]
+- [ ] missing for kbd75V2 case
+*** Fouth row [1/1]
+- [X] placement ok
+*** Sixth row [1/4]
+- [ ] First 2mm too much on left
+- [ ] Second is missing for YMD case
+- [ ] Third 2mm too much on left
+- [X] Forth is ok
+** USB connecter [3/3]
+- [X] Placement OK
+- [X] USB cable space for YMD case
+  Need to push the PCB on the right
+- [X] USB cable space for KBD75V2 case
+  Perfect
+
+* Electrical
+** Missing component [1/1]
+- [X] C1 is missing 100nF 0603
+** Power options [2/3]
+- [X] From USB C
+- [X] From USB C reverse
+- [ ] From P1
+** 5V power
+OK mesured at P1 (also OK with USB reversed)
+** 3.3V power
+OK mesured at P2 (also OK with USB C reversed)
+** Oscillator
+8MHz on oscillator pin 3
+** STM32 bringup
+- [X] SWD
+- [X] USB connection
+- [X] Programming
+- [X] QMK detected from PC
+** Key matrix
+- All key detected [4/4]
+  - [X] ISO layout
+  - [X] AINSI layout
+  - [X] 3 1U bottom right row
+  - [X] 2 1.5U bottom right row
+** LED backlight
+- [X] Standalone (OK at MAX brightness)
+  OK for cutom RGBLIGHT driver.
+- [ ] Chained (not needed)
+** Per-key LED
+- [X] Max brightness
